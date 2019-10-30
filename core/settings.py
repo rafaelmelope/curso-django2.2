@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    # 'blog.apps.BlogConfig',
+    'blog.apps.BlogConfig',
     'lista.apps.ListaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'lista',
 ]
 
 MIDDLEWARE = [
