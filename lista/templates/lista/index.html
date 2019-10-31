@@ -19,7 +19,7 @@
     <li><b>Produto: </b>{{ item.title }}</li>
     <li><b>Comprado em: </b> {{ item.created_date }}</li>
     <li><b>Vencimento: </b> {{ item.expire_date }}</li>
-    <li><a href="/update/{{ item.id }}"> Editar</a></li><br><br>
+    <li><a href="/update/{{ item.id }}"> Editar</a> ou <a href="/delete/{{ item.id }}"> Deletar</a></li><br><br>
     {% endfor %}
 
   </ul>

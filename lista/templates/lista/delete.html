@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deletar</title>
+</head>
+<body>
+<h1>Tem certeza que deseja deletar a pessoa abaixo?</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <button type="submit">DELETAR</button
+</form>
+</body>
+</html>

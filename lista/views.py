@@ -25,3 +25,13 @@ def cadastrar_update(request, id):
         form.save()
         return redirect("index")
     return render(request, 'lista/new.html', {'form': form})
+
+def cadastrar_delete(request, id):
+    item = get_object_or_404(Lista, pk=id)
+    form = CadastrarForm(request.POST or None, instance=item)
+
+    if request.method == 'POST':
+        item.delete()
+        return redirect("index")
+
+    return render(request, 'lista/delete.html', {'form': form})
