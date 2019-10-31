@@ -5,7 +5,7 @@
     <title>cadastrar</title>
 </head>
 <body>
-<form action="{% url 'cadastrar' %}" method="POST">
+<form method="POST">
     {% csrf_token %}
     {{ form.as_ul }}
     <button type="submit">Cadastrar</button

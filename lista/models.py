@@ -16,7 +16,7 @@ class Lista(models.Model):
         return self.title
 
     class Meta:
-        ordering = ['created_date']
-        # ordering = ['-created_date']
+        # ordering = ['created_date']
+        ordering = ['-created_date']
         verbose_name = 'Lista de Compra'
         verbose_name_plural = 'Lista de Compras'

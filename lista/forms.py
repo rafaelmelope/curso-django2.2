@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Lista
+from .models import Lista # Importar Models Lista
 
 class CadastrarForm(ModelForm):
     class Meta:

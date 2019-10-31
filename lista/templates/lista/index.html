@@ -12,13 +12,16 @@
     <h4> <a href="http://127.0.0.1:8000/new/">Cadastrar Novo</a> </h4>
 
   <br>
+
+    <ul>
+
     {% for item in grid %}
-
-    <li><b>Produto:</b> {{ item.title }}</li>
-    <li><b>Comprado em:</b> {{ item.created_date }}</li>
-    <li><b>Vencimento:</b> {{ item.expire_date }}</li></br></br>
-
+    <li><b>Produto: </b>{{ item.title }}</li>
+    <li><b>Comprado em: </b> {{ item.created_date }}</li>
+    <li><b>Vencimento: </b> {{ item.expire_date }}</li>
+    <li><a href="/update/{{ item.id }}"> Editar</a></li><br><br>
     {% endfor %}
+
   </ul>
 </center>
 </body>
