@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Deletar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Tem certeza que deseja deletar a pessoa abaixo?</h1>
+<center>
+<!--<h1>Tem certeza que deseja deletar:</h1>-->
+<p>
+    <h4>{{produto}}</h4>
 <form method="POST">
     {% csrf_token %}
-    {{ form.as_ul }}
-    <button type="submit">DELETAR</button
+<!--    {{ form.as_ul }}-->
+    <button type="submit" class="btn btn-primary">Deletar</button>
+     <a href="/"> Cancelar</a>
 </form>
+    </center>
 </body>
 </html>

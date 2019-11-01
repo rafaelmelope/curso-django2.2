@@ -5,7 +5,8 @@ from django.utils import timezone
 class Lista(models.Model):
     title = models.CharField(max_length=50)
     created_date = models.DateTimeField(default=timezone.now)
-    expire_date = models.DateTimeField(blank=True, null=True)
+    expire_date = models.DateTimeField()
+    # expire_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
         self.expire_date = timezone.now()

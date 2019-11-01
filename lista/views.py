@@ -34,4 +34,4 @@ def cadastrar_delete(request, id):
         item.delete()
         return redirect("index")
 
-    return render(request, 'lista/delete.html', {'form': form})
+    return render(request, 'lista/delete.html', {'produto': item.title})
