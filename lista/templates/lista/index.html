@@ -21,7 +21,9 @@
         <div class="card-body">
         <h5 class="card-title">{{ item.title }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Vencimento</h6>
-        <p class="card-text">{{ item.expire_date|date:'d F Y' }}</p>
+<!--        <p class="card-text">Comprado: {{ item.created_date|date:'d F Y' }}</p>-->
+        <p class="card-text">Vencimento: {{ item.expire_date|date:'d F Y' }}</p>
+
 <!--        <p class="card-text">{{ item.expire_date|date:'d-m-Y' }}</p>-->
         <a href="/update/{{ item.id }}" class="badge badge-primary">Editar</a>
         <a href="/delete/{{ item.id }}" class="badge badge-danger">Deletar</a>

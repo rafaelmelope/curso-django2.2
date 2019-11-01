@@ -1,15 +1,13 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
-from datetime import datetime
-
 from .models import Lista # Importar models Lista
 from .forms import CadastrarForm  # Importar CadastraForm de forms.py
+import datetime
 
 def index(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
     grid = Lista.objects.all()
-    delta = datetime.now().date()
     return render(request, 'lista/index.html', {'grid': grid})
 
 
