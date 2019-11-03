@@ -3,13 +3,16 @@ from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
 from .models import Lista # Importar models Lista
 from .forms import CadastrarForm  # Importar CadastraForm de forms.py
-import datetime
+from django.utils import timezone
 
 def index(request):
-    # return HttpResponse("Hello, world. You're at the polls index.")
     grid = Lista.objects.all()
-    return render(request, 'lista/index.html', {'grid': grid})
-
+    hoje = timezone.localdate()
+    context = {
+        'grid': grid,
+        'hoje': hoje,
+    }
+    return render(request, 'lista/index.html', context)
 
 def cadatrar_new(request):
     form = CadastrarForm(request.POST or None)

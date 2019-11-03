@@ -15,15 +15,19 @@
 </button><p><p>
     <a href="http://127.0.0.1:8000/new/" button type="button" class="btn btn-outline-primary">Cadastrar Novo</a>
     <p>
+    <h6 class="">Hoje: {{hoje|date:'d F Y'}}</h6>
     {% for item in grid %}
-
     <div class="card" style="width: 18rem;">
         <div class="card-body">
         <h5 class="card-title">{{ item.title }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Vencimento</h6>
+
+            {% if item.expire_date < hoje %}
+                <p> PRODUTO VENCIDO </p>
+            {% endif %}
+
 <!--        <p class="card-text">Comprado: {{ item.created_date|date:'d F Y' }}</p>-->
         <p class="card-text">Vencimento: {{ item.expire_date|date:'d F Y' }}</p>
-
 <!--        <p class="card-text">{{ item.expire_date|date:'d-m-Y' }}</p>-->
         <a href="/update/{{ item.id }}" class="badge badge-primary">Editar</a>
         <a href="/delete/{{ item.id }}" class="badge badge-danger">Deletar</a>
