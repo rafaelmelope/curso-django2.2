@@ -9,10 +9,10 @@
 </head>
 <body>
 <center>
-   <br>
-    <button type="button" class="btn btn-primary">
-  Lista de Compras <span class="badge badge-light">{{grid|length}}</span>
-</button><p><p>
+        <br>
+        <button type="button" class="btn btn-primary">
+    Lista de Compras <span class="badge badge-light">{{grid|length}}</span>
+        </button><p><p>
     <a href="http://127.0.0.1:8000/new/" button type="button" class="btn btn-outline-primary">Cadastrar Novo</a>
     <p>
     <h6 class="">Hoje: {{hoje|date:'d F Y'}}</h6>
@@ -31,12 +31,12 @@
 <!--        <p class="card-text">{{ item.expire_date|date:'d-m-Y' }}</p>-->
         <a href="/update/{{ item.id }}" class="badge badge-primary">Editar</a>
         <a href="/delete/{{ item.id }}" class="badge badge-danger">Deletar</a>
-  </div>
-</div><p>
+            </div>
+            </div><p>
 
     {% endfor %}
 
-  </ul>
+            </ul>
 </center>
 </body>
 </html>

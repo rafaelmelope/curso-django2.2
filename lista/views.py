@@ -8,6 +8,8 @@ from django.utils import timezone
 def index(request):
     grid = Lista.objects.all()
     hoje = timezone.localdate()
+
+
     context = {
         'grid': grid,
         'hoje': hoje,
