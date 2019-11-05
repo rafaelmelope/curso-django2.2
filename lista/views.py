@@ -8,6 +8,22 @@ from django.utils import timezone
 def index(request):
     grid = Lista.objects.all()
     hoje = timezone.localdate()
+
+    for item in grid:
+        vencimento = item.expire_date.date()
+        dias = (vencimento - hoje).days
+        if dias > 1:
+            item.dias = "Vence em {} dias".format(str(dias))
+            item.save()
+        if dias < 5 and dias >1:
+            item.atencao = True
+            item.save()
+        else:
+            item.atencao = False
+            item.save()
+
+        print(item.atencao)
+
     context = {
         'grid': grid,
         'hoje': hoje,
