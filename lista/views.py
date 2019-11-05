@@ -4,12 +4,11 @@ from django.shortcuts import get_object_or_404
 from .models import Lista # Importar models Lista
 from .forms import CadastrarForm  # Importar CadastraForm de forms.py
 from django.utils import timezone
+import datetime
 
 def index(request):
     grid = Lista.objects.all()
     hoje = timezone.localdate()
-
-
     context = {
         'grid': grid,
         'hoje': hoje,

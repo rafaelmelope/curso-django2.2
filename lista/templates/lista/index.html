@@ -22,7 +22,7 @@
         <h5 class="card-title">{{ item.title }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Vencimento</h6>
 
-            {% if item.expire_date < hoje %}
+            {% if item.expire_date < item.expire_date %}
                 <p> PRODUTO VENCIDO </p>
             {% endif %}
 
