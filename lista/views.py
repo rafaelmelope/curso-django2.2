@@ -10,6 +10,7 @@ def index(request):
     hoje = timezone.localdate()
 
     for item in grid:
+        item.expire()
         vencimento = item.expire_date.date()
         dias = (vencimento - hoje).days
         if dias > 1:
@@ -21,8 +22,6 @@ def index(request):
         else:
             item.atencao = False
             item.save()
-
-        print(item.atencao)
 
     context = {
         'grid': grid,
